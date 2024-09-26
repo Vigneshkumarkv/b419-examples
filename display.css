@@ -61,11 +61,15 @@ body {
                         padding: 2px;
                         border-radius: 8px;
                         border: 0px;
+                        cursor:cell;
 
                         color: white;
                         font-size: 14px;
                         font-weight: 600;
                         background-color: rgb(21, 155, 233);
+                    }
+                    button:hover {
+                        box-shadow: 1px 1px 1px 1px lightblue;
                     }
                 }
             }
