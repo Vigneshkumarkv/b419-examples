@@ -1,109 +1,207 @@
 * {
+    /* resetting the padding and margin  */
+    padding: 0;
+    margin: 0;
+
+    /* setting box-sizing */
     box-sizing: border-box;
 }
 
-header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    height: 30px;
+body {
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(0, 0, 0);
+        height: 50px;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 5;
 
-    background-color: black;
-    color: white;
-    img {
-        /* height: 20px; */
-        width: 20px;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
-    nav {
-        display: inline;
-        a {
-            color: whitesmoke;
-        }
-    }
-}
+        /* border: 1px solid; */
+        #head-link {
+            height: 100%;
+            div.logo {
+                margin-left: 20px;
+                height: 100%;
+                aspect-ratio: 1/1;
+                overflow: hidden;
 
-p.abc {
-    /* setting bg color of element */
-    background-color: rgb(175, 175, 175); 
+                img {
+                    height: 100%;
+                    border: 1px solid white;
+                    transform: scale(1.4);
+                    /* this is a workaround to zoom the image as it has too much padding in the file itself */
 
-    /* Font */
-    /* setting font color inside the element */
-    color: rgb(0, 0, 0);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 700; /* boldness of the font */
-    font-style: italic;
-
-    /* Dimensions */
-    height: 100px;
-    /* width: 100px; */
-    aspect-ratio: 1/1; /* width: height ratio */
-
-    /* border */
-    border: 7px solid rgb(64, 0, 255);
-    /* border-radius: 50%; */
-    border-radius: 20px;
-
-    img {
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
-    
-
-}
-img {
-    width: 50px;
-
-}
-
-em {
-    color: violet;
-}
-
-main {
-    margin-top: 50px;
-    .box-container {
-        height: 220px; 
-        width: 200px;
-        background-color: rgb(120, 156, 187);
-        border: 2px solid greenyellow;
-
-        .box {
-            margin: auto;
-            text-align: center;
-            height: 200px;
-            width: 200px;
-            padding: 5px;
-            background-color: rgb(227, 244, 252);
-            /* background: url(images/pic1.jpg);
-            background-blend-mode: lighten;
-            background-position: center; */
-            /* border: 2px solid; */
-            border-radius: 20px;
-
-            position: fixed;
-            top: 50%;
-            /* bottom: 0; */
-            left: 50%;
-            transform: translate(-50%,-50%);
-            form {
-                input {
-                    text-align: center;
                 }
             }
-            button {
-                border-radius: 20px;
-                margin-top: 10px;
+        }
+
+        nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            a {
+                color: white;
+                font-size: larger;
+                text-decoration: none;
+                /* removes the underline of the links */
                 padding: 5px;
+                margin: 4px;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition-duration: 1s;
             }
-            
+
+            a:hover {
+                color: black;
+                background-color: whitesmoke;
+            }
         }
     }
-    .random {
-        width: 200px;
-        aspect-ratio: 1/1;
-        background-color: rgb(175, 115, 115);
-        border: 1px solid;
+
+    main {
+        max-width: 800px;
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 25px;
+
+        div.container {
+            /* flex properties */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin-top: 70px;
+
+            /* background-color: black; */
+            /* end of flex properties */
+            /*  styling for a product card */
+            div.card {
+                /* border: 1px solid; */
+                box-shadow: 1px 2px 4px 1px rgb(0, 0, 0);
+                border-radius: 6px;
+                background-color: rgb(255, 255, 255);
+                height: 310px;
+                width: 150px;
+                margin-top: 20px;
+                margin: 10px;
+                overflow: hidden;
+                transition-duration: 2s;
+
+                div.card-img {
+                    height: 50%;
+                    width: 100%;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                div.card-text {
+                    text-align: center;
+                    /* background-color: aqua; */
+                    height: 50%;
+
+                    h3 {
+
+                        margin-top: 5px;
+                        height: 30px;
+                    }
+
+                    h5 {
+                        height: 20px;
+                    }
+
+                    p {
+                        height: 65px;
+                        padding: 4px;
+                        color: rgb(99, 99, 99);
+                        /* overflow: hidden; */
+                        /* text-overflow: ellipsis; */
+                        /* text-wrap: nowrap; */
+                    }
+
+                    button {
+                        height: 25px;
+                        width: 100px;
+                        padding: 2px;
+                        border-radius: 8px;
+                        border: 0px;
+                        /* cursor: cell;*/
+                        /* changes the shape of mouse pointer cursor */
+
+                        color: white;
+                        font-size: 14px;
+                        font-weight: 600;
+                        background-color: rgb(21, 155, 233);
+                    }
+
+                    button:hover {
+                        box-shadow: 1px 1px 1px 1px lightblue;
+                    }
+                }
+            }
+
+            div.card:hover {
+                background-color: rgb(255, 255, 255);
+                box-shadow: 1px 2px 4px 1px rgb(201, 201, 201);
+                transform: scale(1.05);
+                transition-duration: 1s;
+            }
+        }
+
+
+        /* Styling for the about page */
+        #desc {
+            margin-top: 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            div.logo {
+                img {
+                    height: 200px;
+                    aspect-ratio: 1/1;
+                }
+            }
+
+            article {
+                text-align: center;
+                width: 80%;
+
+                h2 {
+                    color: rgb(51, 51, 51);
+                }
+
+                p {
+                    margin-top: 10px;
+                    font-family: cursive;
+
+                }
+            }
+        }
+    }
+
+    footer {
+        position: fixed;
+        height: 25px;
+        width: 100%;
+        background-color: black;
+        color: white;
+        bottom: 0;
+        z-index: 5;
+
+        p {
+            text-align: center;
+        }
+
     }
 }
